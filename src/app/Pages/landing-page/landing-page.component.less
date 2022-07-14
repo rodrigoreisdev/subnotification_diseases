@@ -1,0 +1,162 @@
+@import '../../../styles.less';
+.lp-all {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .container {
+        display: flex;
+        flex-direction: column;
+        .carrousel {
+            margin: 2rem auto;
+            ::ng-deep ngu-carousel {
+                .ngucarousel {
+                    img {
+                        width: 100%;
+                        object-fit: contain;
+                        object-position: center center;
+                    }
+                    ::ng-deep .item {
+                        padding: 0;
+                    }
+                    .buttonPrev {
+                        outline: none;
+                        position: absolute;
+                        top: 45%;
+                        left: 3%;
+                        height: 41px;
+                        width: 41px;
+                        display: flex;
+                        place-content: center;
+                        place-items: center;
+                        background: transparent;
+                        border: 1px solid white;
+                        border-radius: 50%;
+                        padding: 3px;
+                        z-index: 1;
+                        cursor: pointer;
+                        .fa {
+                            font-size: 20px;
+                            color: white;
+                        }
+                        &:hover {
+                            opacity: 0.8;
+                        }
+                        @media screen and (max-width: 425px) {
+                            height: 31px;
+                            width: 31px;
+                            .fa {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                    .ButtonNex {
+                        outline: none;
+                        position: absolute;
+                        top: 45%;
+                        right: 3%;
+                        height: 41px;
+                        width: 41px;
+                        display: flex;
+                        place-content: center;
+                        place-items: center;
+                        background: white;
+                        border-radius: 50%;
+                        padding: 3px;
+                        cursor: pointer;
+                        .fa {
+                            font-size: 20px;
+                            color: #000;
+                        }
+                        &:hover {
+                            opacity: 0.8;
+                        }
+                        @media screen and (max-width: 425px) {
+                            height: 31px;
+                            width: 31px;
+                            .fa {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .faq {
+            margin: 2rem 0;
+            ::ng-deep.p-accordion {
+                margin-right: 3rem;
+                ::ng-deep.p-accordion-tab {
+                    margin: 1rem 0;
+                    transition: all 0.3s ease-in-out;
+                    &.p-accordion-tab-active {
+                        border-bottom: 2px solid #000000bb;
+                    }
+                }
+                ::ng-deep.p-accordion-header {
+                    .p-accordion-header-link {
+                        border: none;
+                        background: none;
+                        padding: 1rem 0;
+                        &:hover {
+                            background-color: transparent;
+                        }
+                        &:focus {
+                            box-shadow: none;
+                        }
+                        .p-accordion-toggle-icon {
+                            color: white;
+                            font-size: 12px;
+                            background: @primary;
+                            padding: 2px;
+                            margin-right: 2rem;
+                        }
+                        .p-accordion-header-text {
+                            font-size: 18px;
+                            color: @text;
+                        }
+                    }
+                }
+                ::ng-deep.p-accordion-content {
+                    background: transparent;
+                    border: none;
+                    .cnt-raio {
+                        display: flex;
+                        flex-direction: column;
+                        .option {
+                            padding: 0.5rem 0;
+                            display: flex;
+                            input {
+                                cursor: pointer;
+                                width: 20px;
+                                height: 20px;
+                                border-color: #000000;
+                                &:checked:after {
+                                    background-color: @primary;
+                                }
+                            }
+                            label {
+                                cursor: pointer;
+                                color: @text;
+                                margin-left: 5px;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .register {
+            .title {
+                font-size: 20px;
+                font-weight: 600;
+                color: @text;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+            form {
+                margin:2rem 5rem;
+            }
+        }
+    }
+}

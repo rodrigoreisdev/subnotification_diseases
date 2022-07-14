@@ -1,0 +1,89 @@
+<div class="lp-all">
+    <div class="container">
+        <div class="carrousel">
+            <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="carouselItems">
+                <ngu-tile *nguCarouselDef="let item; let i = index">
+                    <a [href]="item.link" *ngIf="item.link">
+                        <img [src]="item.img" alt="">
+                    </a>
+                    <span *ngIf="!item.link">
+                        <img [src]="item.img" alt="">
+                    </span>
+                </ngu-tile>
+                <button NguCarouselPrev class='buttonPrev'>
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button NguCarouselNext class='ButtonNex'>
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </ngu-carousel>
+        </div>
+        <div class="faq">
+            <p-accordion [multiple]="true" [expandIcon]="'pi pi-plus'" [collapseIcon]="'pi pi-minus'">
+                <p-accordionTab header="Header 1">
+                    Content 1
+                </p-accordionTab>
+                <p-accordionTab header="Header 2">
+                    Content 2
+                </p-accordionTab>
+                <p-accordionTab header="Header 3">
+                    Content 3
+                </p-accordionTab>
+                <p-accordionTab header="Header 4">
+                    Content 4
+                </p-accordionTab>
+            </p-accordion>
+        </div>
+        <div class="register">
+            <div class="title">Formulário Obrigatório</div>
+            <form>
+                <div class="label-float">
+                    <input class="form-control" type="text" id="name" name="name" placeholder="Nome">
+                    <label for="name">Nome</label>
+                </div>
+                <div class="label-float">
+                    <input class="form-control" type="email" id="email" name="email" placeholder="Email">
+                    <label for="email">Email</label>
+                </div>
+                <div class="split">
+                    <div class="label-float">
+                        <input class="form-control" type="text" id="phone" name="phone" placeholder="Telefone">
+                        <label for="phone">Telefone</label>
+                    </div>
+                    <div class="label-float">
+                        <input class="form-control" type="date" id="date" name="date">
+                        <label for="date">Data de nascimento</label>
+                    </div>
+                </div>
+                <div class="split">
+                    <div class="label-float">
+                        <input class="form-control" type="text" id="cpf" name="cpf" placeholder="CPF">
+                        <label for="cpf">CPF</label>
+                    </div>
+                    <div class="label-float">
+                        <select class="form-control" name="gender">
+                            <option>Selecione</option>
+                            <option>Masculino</option>
+                            <option>Feminino</option>
+                            <option>Não informar</option>
+                        </select>
+                        <label for="gender">Sexo</label>
+                    </div>
+                </div>
+                <div class="split">
+                    <div class="label-float">
+                        <input class="form-control" type="text" id="city" name="city" placeholder="Cidade">
+                        <label for="city">Cidade</label>
+                    </div>
+                    <div class="label-float">
+                        <input class="form-control" type="text" id="state" name="state" placeholder="Estado">
+                        <label for="state">Estado</label>
+                    </div>
+                </div>
+                <div class="button">
+                    <button type="submit" class="btn green">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

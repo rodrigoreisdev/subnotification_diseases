@@ -1,22 +1,32 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingPageComponent } from './components/landing-page/landing-page.component';
-import { NavbarComponent } from './components/commom/navbar/navbar.component';
-import { FooterComponent } from './components/commom/footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './Components/commom/footer/footer.component';
+import { NavbarComponent } from './Components/commom/navbar/navbar.component';
+import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
 
+import { NguCarouselModule } from '@ngu/carousel';
+import {AccordionModule} from 'primeng/accordion';
+import { LoginComponent } from './Pages/login/login.component';
+import { RegisterComponent } from './Pages/register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    AccordionModule,
+    NguCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
