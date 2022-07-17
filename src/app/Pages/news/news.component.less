@@ -1,0 +1,40 @@
+@import '../../../styles.less';
+.container {
+    min-height: calc(100vh - 10.5rem);
+    .title {
+        margin: 2.5rem;
+    }
+    .cnt-news {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem auto;
+        gap: 2rem;
+        justify-content: space-between;
+        .box-news {
+            width: calc(50% - 1rem);
+            border: @primary 1px solid;
+            border-radius: 10px;
+            display: flex;
+            padding: 1rem;
+            cursor: pointer;
+            &:hover {
+                background-color: #00923f11;
+            }
+            .image {
+                width: 90px;
+                height: 90px;
+                background-size: cover;
+                background-position: center;
+                border-radius: 6px;
+                background-repeat: no-repeat;
+                margin-right: 1rem;
+                img {
+                    border-radius: 6px;
+                }
+            }
+            .text {
+                text-align: justify;
+            }
+        }
+    }
+}

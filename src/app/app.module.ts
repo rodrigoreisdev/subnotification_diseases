@@ -12,6 +12,8 @@ import { NguCarouselModule } from '@ngu/carousel';
 import {AccordionModule} from 'primeng/accordion';
 import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
+import { NewsComponent } from './Pages/news/news.component';
+import { NewsDetailComponent } from './Pages/news-detail/news-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +22,8 @@ import { RegisterComponent } from './Pages/register/register.component';
     FooterComponent,
     LoginComponent,
     RegisterComponent,
+    NewsComponent,
+    NewsDetailComponent,
   ],
   imports: [
     BrowserModule,
