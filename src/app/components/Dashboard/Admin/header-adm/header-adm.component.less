@@ -1,0 +1,22 @@
+@import '../../../../../styles.less';
+
+.container {
+    margin: 1rem auto;
+    .links-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 3rem;
+        margin-bottom: 2rem;
+        .link {
+            display: flex;
+            font-size: 18px;
+            cursor: pointer;
+            color: @text;
+            &:hover, &:active {
+                color: @primary;
+            }
+        }
+    }
+}

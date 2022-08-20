@@ -14,6 +14,10 @@ import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { NewsComponent } from './Pages/news/news.component';
 import { NewsDetailComponent } from './Pages/news-detail/news-detail.component';
+import { LoginAdmComponent } from './Pages/login-adm/login-adm.component';
+import { DefaultComponent } from './components/Dashboard/Admin/default/default.component';
+import { HeaderAdmComponent } from './components/Dashboard/Admin/header-adm/header-adm.component';
+import { HomeAdmComponent } from './components/Dashboard/Admin/home-adm/home-adm.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +28,10 @@ import { NewsDetailComponent } from './Pages/news-detail/news-detail.component';
     RegisterComponent,
     NewsComponent,
     NewsDetailComponent,
+    LoginAdmComponent,
+    DefaultComponent,
+    HeaderAdmComponent,
+    HomeAdmComponent,
   ],
   imports: [
     BrowserModule,
