@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="title">Cadastros</div>
+    <p-table [value]="registers" responsiveLayout="scroll" [styleClass]="'table'">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nome</th>
+                <th>Documento</th>
+                <th>Data de Nascimento</th>
+                <th>Cidade</th>
+                <th>Observação</th>
+                <th>Informações</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-register>
+            <tr>
+                <td>{{register.name}}</td>
+                <td>{{register.document}}</td>
+                <td>{{register.date}}</td>
+                <td>{{register.city}}</td>
+                <td>{{register.obs}}</td>
+                <td></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

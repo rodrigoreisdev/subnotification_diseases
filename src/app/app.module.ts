@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './Components/commom/footer/footer.component';
 import { NavbarComponent } from './Components/commom/navbar/navbar.component';
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
-
+import {TableModule} from 'primeng/table';
 import { NguCarouselModule } from '@ngu/carousel';
 import {AccordionModule} from 'primeng/accordion';
 import { LoginComponent } from './Pages/login/login.component';
@@ -18,6 +18,7 @@ import { LoginAdmComponent } from './Pages/login-adm/login-adm.component';
 import { DefaultComponent } from './components/Dashboard/Admin/default/default.component';
 import { HeaderAdmComponent } from './components/Dashboard/Admin/header-adm/header-adm.component';
 import { HomeAdmComponent } from './components/Dashboard/Admin/home-adm/home-adm.component';
+import { RegistersAdmComponent } from './components/Dashboard/Admin/registers-adm/registers-adm.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,13 +33,15 @@ import { HomeAdmComponent } from './components/Dashboard/Admin/home-adm/home-adm
     DefaultComponent,
     HeaderAdmComponent,
     HomeAdmComponent,
+    RegistersAdmComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AccordionModule,
-    NguCarouselModule
+    NguCarouselModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

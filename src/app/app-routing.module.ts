@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DefaultComponent } from './components/Dashboard/Admin/default/default.component';
 import { HomeAdmComponent } from './components/Dashboard/Admin/home-adm/home-adm.component';
+import { RegistersAdmComponent } from './components/Dashboard/Admin/registers-adm/registers-adm.component';
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
 import { LoginAdmComponent } from './Pages/login-adm/login-adm.component';
 import { LoginComponent } from './Pages/login/login.component';
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path: '',
         component: HomeAdmComponent
+      },
+      {
+        path: 'cadastros',
+        component: RegistersAdmComponent
       }
     ]
   },
