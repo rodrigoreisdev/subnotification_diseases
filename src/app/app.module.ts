@@ -19,6 +19,7 @@ import { DefaultComponent } from './components/Dashboard/Admin/default/default.c
 import { HeaderAdmComponent } from './components/Dashboard/Admin/header-adm/header-adm.component';
 import { HomeAdmComponent } from './components/Dashboard/Admin/home-adm/home-adm.component';
 import { RegistersAdmComponent } from './components/Dashboard/Admin/registers-adm/registers-adm.component';
+import { NavbarHomeComponent } from './components/commom/navbar-home/navbar-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { RegistersAdmComponent } from './components/Dashboard/Admin/registers-ad
     HeaderAdmComponent,
     HomeAdmComponent,
     RegistersAdmComponent,
+    NavbarHomeComponent,
   ],
   imports: [
     BrowserModule,

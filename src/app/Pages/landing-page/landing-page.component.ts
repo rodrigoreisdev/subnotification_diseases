@@ -13,19 +13,19 @@ export class LandingPageComponent implements OnInit {
   public carouselItems: any[] = [
     {
       img: 'https://picsum.photos/1120/340?random=1',
-      link: '#',
+      link: '/noticias',
     },
     {
       img: 'https://picsum.photos/1120/340?random=2',
-      link: '#',
+      link: '/noticias',
     },
     {
       img: 'https://picsum.photos/1120/340?random=3',
-      link: '#',
+      link: '/noticias',
     },
     {
       img: 'https://picsum.photos/1120/340?random=4',
-      link: '#',
+      link: '/noticias',
     },
   ];
   public carouselTile: NguCarouselConfig = {
