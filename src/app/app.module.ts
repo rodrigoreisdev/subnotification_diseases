@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FooterComponent } from './Components/commom/footer/footer.component';
-import { NavbarComponent } from './Components/commom/navbar/navbar.component';
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
 import {TableModule} from 'primeng/table';
 import { NguCarouselModule } from '@ngu/carousel';
@@ -20,6 +18,14 @@ import { HeaderAdmComponent } from './components/Dashboard/Admin/header-adm/head
 import { HomeAdmComponent } from './components/Dashboard/Admin/home-adm/home-adm.component';
 import { RegistersAdmComponent } from './components/Dashboard/Admin/registers-adm/registers-adm.component';
 import { NavbarHomeComponent } from './components/commom/navbar-home/navbar-home.component';
+import { MessagesAdmComponent } from './components/Dashboard/Admin/messages-adm/messages-adm.component';
+import { NavbarComponent } from './components/commom/navbar/navbar.component';
+import { FooterComponent } from './components/commom/footer/footer.component';
+import { NewsAdmComponent } from './components/Dashboard/Admin/news-adm/news-adm.component';
+import { AddNewsAdmComponent } from './components/Dashboard/Admin/add-news-adm/add-news-adm.component';
+
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +42,9 @@ import { NavbarHomeComponent } from './components/commom/navbar-home/navbar-home
     HomeAdmComponent,
     RegistersAdmComponent,
     NavbarHomeComponent,
+    MessagesAdmComponent,
+    NewsAdmComponent,
+    AddNewsAdmComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +52,9 @@ import { NavbarHomeComponent } from './components/commom/navbar-home/navbar-home
     BrowserAnimationsModule,
     AccordionModule,
     NguCarouselModule,
-    TableModule
+    TableModule,
+    AngularEditorModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

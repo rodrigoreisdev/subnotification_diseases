@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddNewsAdmComponent } from './components/Dashboard/Admin/add-news-adm/add-news-adm.component';
 import { DefaultComponent } from './components/Dashboard/Admin/default/default.component';
 import { HomeAdmComponent } from './components/Dashboard/Admin/home-adm/home-adm.component';
+import { MessagesAdmComponent } from './components/Dashboard/Admin/messages-adm/messages-adm.component';
+import { NewsAdmComponent } from './components/Dashboard/Admin/news-adm/news-adm.component';
 import { RegistersAdmComponent } from './components/Dashboard/Admin/registers-adm/registers-adm.component';
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
 import { LoginAdmComponent } from './Pages/login-adm/login-adm.component';
@@ -46,6 +49,18 @@ const routes: Routes = [
       {
         path: 'cadastros',
         component: RegistersAdmComponent
+      },
+      {
+        path: 'mensagens',
+        component: MessagesAdmComponent
+      },
+      {
+        path: 'publicacoes',
+        component: NewsAdmComponent
+      },
+      {
+        path: 'nova-publicacao',
+        component: AddNewsAdmComponent
       }
     ]
   },
