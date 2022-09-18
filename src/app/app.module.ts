@@ -26,6 +26,11 @@ import { AddNewsAdmComponent } from './components/Dashboard/Admin/add-news-adm/a
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule} from '@angular/common/http';
+import { DefaultUserComponent } from './components/Dashboard/User/default-user/default-user.component';
+import { HeaderUserComponent } from './components/Dashboard/User/header-user/header-user.component';
+import { HomeUserComponent } from './components/Dashboard/User/home-user/home-user.component';
+import { ContactComponent } from './components/Dashboard/User/contact/contact.component';
+import { PersonalDataUserComponent } from './components/Dashboard/User/personal-data-user/personal-data-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +50,11 @@ import { HttpClientModule} from '@angular/common/http';
     MessagesAdmComponent,
     NewsAdmComponent,
     AddNewsAdmComponent,
+    DefaultUserComponent,
+    HeaderUserComponent,
+    HomeUserComponent,
+    ContactComponent,
+    PersonalDataUserComponent,
   ],
   imports: [
     BrowserModule,
