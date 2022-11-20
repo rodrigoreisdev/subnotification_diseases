@@ -31,6 +31,9 @@ import { HeaderUserComponent } from './components/Dashboard/User/header-user/hea
 import { HomeUserComponent } from './components/Dashboard/User/home-user/home-user.component';
 import { ContactComponent } from './components/Dashboard/User/contact/contact.component';
 import { PersonalDataUserComponent } from './components/Dashboard/User/personal-data-user/personal-data-user.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToxicityService } from './Services/toxicity.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,9 +67,10 @@ import { PersonalDataUserComponent } from './components/Dashboard/User/personal-
     NguCarouselModule,
     TableModule,
     AngularEditorModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ToxicityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
