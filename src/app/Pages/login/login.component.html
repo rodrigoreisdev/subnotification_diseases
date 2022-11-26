@@ -5,16 +5,16 @@
         </div>
         <div class="right">
             <div class="title">Login</div>
-            <form>
+            <form [formGroup]="loginForm" (submit)="onLogin()">
                 <div class="label-float">
-                    <input class="form-control" type="email" id="email" name="email" placeholder="Email">
+                    <input class="form-control" formControlName="Email" type="email" id="email" name="email" placeholder="Email" (keyup.enter)="onLogin()">
                     <label for="email">Email</label>
                 </div>
                 <div class="label-float">
-                    <input type="password" class="form-control" id="password" formControlName="password" placeholder="Senha">
+                    <input type="password" formControlName="Password" class="form-control" id="password" placeholder="Senha" (keyup.enter)="onLogin()">
                     <label for="password">Senha</label>
                 </div>
-                <button type="submit" class="btn green" routerLink="/painel">Entrar</button>
+                <button type="submit" class="btn green">Entrar</button>
             </form>
         </div>
     </div>

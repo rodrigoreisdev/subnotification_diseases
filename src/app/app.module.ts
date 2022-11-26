@@ -5,11 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
-import {TableModule} from 'primeng/table';
+import { TableModule } from 'primeng/table';
 import { NguCarouselModule } from '@ngu/carousel';
-import {AccordionModule} from 'primeng/accordion';
-import {ToastModule} from 'primeng/toast';
-import {MessageService} from 'primeng/api';
+import { AccordionModule } from 'primeng/accordion';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { NewsComponent } from './Pages/news/news.component';
@@ -27,7 +27,7 @@ import { NewsAdmComponent } from './components/Dashboard/Admin/news-adm/news-adm
 import { AddNewsAdmComponent } from './components/Dashboard/Admin/add-news-adm/add-news-adm.component';
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { DefaultUserComponent } from './components/Dashboard/User/default-user/default-user.component';
 import { HeaderUserComponent } from './components/Dashboard/User/header-user/header-user.component';
 import { HomeUserComponent } from './components/Dashboard/User/home-user/home-user.component';
@@ -37,11 +37,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToxicityService } from './Services/toxicity.service';
 import { SharedService } from './Services/shared.service';
 import { CommonService } from './Services/common.service';
+import { CookiesService } from './Services/cookies.service';
+import { CookieModule } from 'ngx-cookie';
 
 
 import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { AuthGuard } from './Services/auth.guard';
 
-export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
+export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
@@ -80,9 +83,17 @@ export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
     ReactiveFormsModule,
     FormsModule,
     ToastModule,
-    NgxMaskModule.forRoot()
+    CookieModule.withOptions(),
+    NgxMaskModule.forRoot(),
   ],
-  providers: [ToxicityService, SharedService, CommonService, MessageService],
+  providers: [
+    ToxicityService,
+    SharedService,
+    CommonService,
+    MessageService,
+    CookiesService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

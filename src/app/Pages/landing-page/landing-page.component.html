@@ -48,12 +48,12 @@
                 </div>
                 <div class="split">
                   <div class="label-float">
-                      <input class="form-control" formControlName="Password" type="password" id="city" name="city" placeholder="Cidade">
-                      <label for="city">Senha</label>
+                      <input class="form-control" formControlName="Password" type="password" id="password" name="password" placeholder="Senha" (blur)="verifyPassword()">
+                      <label for="password">Senha</label>
                   </div>
                   <div class="label-float">
-                      <input class="form-control" formControlName="confirmPassword" type="password" id="state" name="state" placeholder="Estado">
-                      <label for="state">Confirmar Senha</label>
+                      <input class="form-control" formControlName="confirmPassword" type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmar Senha" (blur)="verifyPassword()">
+                      <label for="confirmPassword">Confirmar Senha</label>
                   </div>
               </div>
                 <div class="split">

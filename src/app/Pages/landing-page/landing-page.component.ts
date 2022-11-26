@@ -177,14 +177,26 @@ export class LandingPageComponent implements OnInit {
   }
 
   onRegister() {
-    if(this.registerForm.valid) {
+    if (this.registerForm.valid) {
       this.sharedService.InsertUser(this.registerForm.value).subscribe(
         (res: any) => {
-          this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Usuário cadastrado com sucesso!'});
+          this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Usuário cadastrado com sucesso!' });
           this.route.navigate(['/login']);
           this.registerForm.reset();
         }
       );
+    }
+  }
+
+  verifyPassword() {
+    if (this.registerForm.value.Password !== '' && this.registerForm.value.confirmPassword !== '') {
+      if (this.registerForm.value.Password !== this.registerForm.value.confirmPassword) {
+        this.registerForm.controls.confirmPassword.setErrors({ notSame: true });
+        this.registerForm.controls.Password.setErrors({ notSame: true });
+      } else {
+        this.registerForm.controls.confirmPassword.setErrors(null);
+        this.registerForm.controls.Password.setErrors(null);
+      }
     }
   }
 

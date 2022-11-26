@@ -1,5 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { CookiesService } from "./cookies.service";
+import jwt_decode from "jwt-decode";
+
+
 
 @Injectable({
   providedIn: "root",
@@ -7,6 +11,13 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 export class CommonService {
 
+  constructor(
+    private cookieService: CookiesService,
+  ){}
 
+  getUserData() {
+    const jwt = this.cookieService.getCookie('authentication') || '';
+    return jwt_decode(jwt);
+  }
 
 }
