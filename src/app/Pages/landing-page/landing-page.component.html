@@ -37,49 +37,62 @@
         </div>
         <div class="register">
             <div class="title">Formulário Obrigatório</div>
-            <form>
+            <form [formGroup]="registerForm" (submit)="onRegister()">
                 <div class="label-float">
-                    <input class="form-control" type="text" id="name" name="name" placeholder="Nome">
+                    <input class="form-control" formControlName="Name" type="text" id="name" name="name" placeholder="Nome">
                     <label for="name">Nome</label>
                 </div>
                 <div class="label-float">
-                    <input class="form-control" type="email" id="email" name="email" placeholder="Email">
+                    <input class="form-control" formControlName="Email" type="email" id="email" name="email" placeholder="Email">
                     <label for="email">Email</label>
                 </div>
                 <div class="split">
+                  <div class="label-float">
+                      <input class="form-control" formControlName="Password" type="password" id="city" name="city" placeholder="Cidade">
+                      <label for="city">Senha</label>
+                  </div>
+                  <div class="label-float">
+                      <input class="form-control" formControlName="confirmPassword" type="password" id="state" name="state" placeholder="Estado">
+                      <label for="state">Confirmar Senha</label>
+                  </div>
+              </div>
+                <div class="split">
                     <div class="label-float">
-                        <input class="form-control" type="text" id="phone" name="phone" placeholder="Telefone">
+                        <input class="form-control" formControlName="Phone" type="text" id="phone" name="phone" placeholder="Telefone" mask="(00) 00000-0000">
                         <label for="phone">Telefone</label>
                     </div>
                     <div class="label-float">
-                        <input class="form-control" type="date" id="date" name="date">
+                        <input class="form-control" formControlName="BirthDate" type="date" id="date" name="date">
                         <label for="date">Data de nascimento</label>
                     </div>
                 </div>
                 <div class="split">
                     <div class="label-float">
-                        <input class="form-control" type="text" id="cpf" name="cpf" placeholder="CPF">
+                        <input class="form-control" formControlName="Cpf" type="text" id="cpf" name="cpf" placeholder="CPF" mask="000.000.000-00">
                         <label for="cpf">CPF</label>
                     </div>
                     <div class="label-float">
-                        <select class="form-control" name="gender">
-                            <option>Selecione</option>
-                            <option>Masculino</option>
-                            <option>Feminino</option>
-                            <option>Não informar</option>
+                        <select class="form-control"formControlName="Gender" name="gender">
+                            <option value="" disabled>Selecione</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Nao Informado">Não informar</option>
                         </select>
                         <label for="gender">Sexo</label>
                     </div>
                 </div>
                 <div class="split">
                     <div class="label-float">
-                        <input class="form-control" type="text" id="city" name="city" placeholder="Cidade">
+                        <input class="form-control"formControlName="City" type="text" id="city" name="city" placeholder="Cidade">
                         <label for="city">Cidade</label>
                     </div>
                     <div class="label-float">
-                        <input class="form-control" type="text" id="state" name="state" placeholder="Estado">
-                        <label for="state">Estado</label>
-                    </div>
+                      <select class="form-control" formControlName="State" name="gender">
+                          <option value="" disabled>Selecione</option>
+                          <option *ngFor="let state of states" [value]="state.value">{{state.label}}</option>
+                      </select>
+                      <label for="gender">Estado</label>
+                  </div>
                 </div>
                 <div class="button">
                     <button type="submit" class="btn green">Enviar</button>

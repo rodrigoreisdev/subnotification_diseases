@@ -8,6 +8,8 @@ import { LandingPageComponent } from './Pages/landing-page/landing-page.componen
 import {TableModule} from 'primeng/table';
 import { NguCarouselModule } from '@ngu/carousel';
 import {AccordionModule} from 'primeng/accordion';
+import {ToastModule} from 'primeng/toast';
+import {MessageService} from 'primeng/api';
 import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { NewsComponent } from './Pages/news/news.component';
@@ -31,8 +33,15 @@ import { HeaderUserComponent } from './components/Dashboard/User/header-user/hea
 import { HomeUserComponent } from './components/Dashboard/User/home-user/home-user.component';
 import { ContactComponent } from './components/Dashboard/User/contact/contact.component';
 import { PersonalDataUserComponent } from './components/Dashboard/User/personal-data-user/personal-data-user.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToxicityService } from './Services/toxicity.service';
+import { SharedService } from './Services/shared.service';
+import { CommonService } from './Services/common.service';
+
+
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+
+export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
@@ -69,8 +78,11 @@ import { ToxicityService } from './Services/toxicity.service';
     AngularEditorModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
+    ToastModule,
+    NgxMaskModule.forRoot()
   ],
-  providers: [ToxicityService],
+  providers: [ToxicityService, SharedService, CommonService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
