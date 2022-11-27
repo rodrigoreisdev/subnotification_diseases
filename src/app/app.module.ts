@@ -43,6 +43,7 @@ import { CookieModule } from 'ngx-cookie';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { AuthGuard } from './Services/auth.guard';
+import { AdminGuard } from './Services/admin.guard';
 
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
@@ -92,7 +93,8 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
     CommonService,
     MessageService,
     CookiesService,
-    AuthGuard
+    AuthGuard,
+    AdminGuard
   ],
   bootstrap: [AppComponent]
 })

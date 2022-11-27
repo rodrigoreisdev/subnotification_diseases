@@ -7,7 +7,7 @@ import { CookiesService } from './cookies.service';
 
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AdminGuard implements CanActivate {
 
     constructor(
         private _router: Router,
@@ -19,16 +19,16 @@ export class AuthGuard implements CanActivate {
         try {
             const userData = this._commonService.getUserData();
             if (userData) {
-              if(Object(userData).role === 'user') {
+              if (Object(userData).role === 'admin') {
                 return true;
               }
             }
             this.cookieService.deleteCookie('authentication');
 
-            this._router.navigate(['/login']);
+            this._router.navigate(['/admin']);
             return false;
         } catch (error) {
-            this._router.navigate(['/login']);
+            this._router.navigate(['/admin']);
             return false;
         }
     }

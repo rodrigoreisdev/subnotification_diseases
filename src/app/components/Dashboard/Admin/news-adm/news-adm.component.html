@@ -10,9 +10,9 @@
         </ng-template>
         <ng-template pTemplate="body" let-item>
             <tr>
-                <td>{{item.CreatedAt}}</td>
-                <td>{{item.Title}}</td>
-                <td>{{item.Content}}</td>
+                <td>{{item.createdAt | date: 'dd/mm/yyyy'}}</td>
+                <td style="width: 200px;">{{item.title}}</td>
+                <td><div [innerHTML]="item.content"></div></td>
                 <td></td>
             </tr>
         </ng-template>

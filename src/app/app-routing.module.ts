@@ -14,6 +14,7 @@ import { LoginComponent } from './Pages/login/login.component';
 import { NewsDetailComponent } from './Pages/news-detail/news-detail.component';
 import { NewsComponent } from './Pages/news/news.component';
 import { RegisterComponent } from './Pages/register/register.component';
+import { AdminGuard } from './Services/admin.guard';
 import { AuthGuard } from './Services/auth.guard';
 
 const routes: Routes = [
@@ -44,6 +45,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DefaultComponent,
+    canActivate: [AdminGuard],
     children: [
       {
         path: '',

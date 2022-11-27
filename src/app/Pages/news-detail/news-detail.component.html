@@ -1,55 +1,14 @@
 <app-navbar-home></app-navbar-home>
 <div class="container">
   <div class="post">
-    <div class="title">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..
-    </div>
-    <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula dolor nec justo
-      ultricies, eu dictum ipsum mattis. Nunc sit amet quam id dolor tristique elementum. In iaculis sodales
-      luctus. Nulla a odio maximus, varius sem eget, placerat arcu. Praesent fringilla eleifend justo. Nunc sed
-      eros non justo pellentesque tristique. Sed eget convallis arcu. Mauris condimentum ut augue scelerisque
-      porta. Nam sed nulla dignissim, viverra neque nec, hendrerit velit. Sed consequat volutpat augue, in ornare
-      urna tempus eu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-      Vestibulum mollis massa sed maximus mattis. Suspendisse id ornare nisi. Maecenas finibus, purus nec tempus
-      accumsan, quam nunc ultricies urna, ut imperdiet risus lectus ut nunc.
-      <br>
-      Mauris in dui egestas dui hendrerit ullamcorper vel sed erat. Pellentesque et facilisis massa. Suspendisse
-      potenti. In in nisl eget nunc venenatis facilisis. Pellentesque placerat arcu luctus leo porttitor commodo.
-      Morbi viverra, leo vitae aliquet pellentesque, lectus eros pharetra justo, non finibus mauris est ac libero.
-      Morbi luctus in mauris quis molestie. Morbi interdum hendrerit augue et finibus. Duis vehicula ullamcorper
-      tellus, id commodo risus posuere feugiat. Phasellus sollicitudin tellus a urna aliquam gravida. Maecenas
-      venenatis nisl quis orci interdum hendrerit. Vivamus non ultricies justo. Nulla a velit turpis. Maecenas
-      vestibulum tortor eget mauris convallis, non faucibus nunc aliquam. Pellentesque ornare, odio sed bibendum
-      accumsan, mi risus accumsan felis, eget rhoncus augue est in lectus.
-      <br>
-      Sed lorem velit, viverra vitae magna et, iaculis pharetra dolor. Suspendisse potenti. Mauris libero est,
-      lacinia vel nulla eu, rutrum porttitor ex. Nullam pellentesque cursus felis eu fermentum. Aenean dignissim
-      tellus ac quam sodales lacinia. Vivamus ornare mauris eget eleifend suscipit. Sed aliquam sed eros in
-      suscipit. Donec arcu nunc, consectetur at sapien vel, maximus tincidunt odio. Class aptent taciti sociosqu
-      ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum
-      primis in faucibus.
-      <br>
-      Sed in quam ante. Donec non mollis libero, eget auctor eros. Curabitur non ante vitae nisl laoreet dignissim
-      ut molestie odio. Curabitur ac urna ac erat viverra feugiat. Morbi nisl ante, vehicula at cursus ut, egestas
-      sed felis. Phasellus mauris ante, fringilla id odio quis, placerat faucibus elit. Aenean rutrum nibh a arcu
-      placerat, ut convallis felis finibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-      posuere cubilia curae; Maecenas aliquam lobortis lacinia.
-      <br>
-      Duis pharetra pretium urna, ac accumsan orci convallis in. Aliquam erat volutpat. Lorem ipsum dolor sit
-      amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam
-      eget justo at dolor tristique gravida. Maecenas non malesuada eros. Nullam fringilla quis felis vel dapibus.
-      Pellentesque at lectus tristique, laoreet ligula feugiat, feugiat lectus. Aenean tellus arcu, maximus id
-      augue ut, porttitor condimentum enim. Vestibulum tristique sed eros a volutpat. Nunc congue imperdiet erat,
-      in iaculis est finibus vitae. Donec non est tempus, egestas urna sit amet, facilisis felis. Integer nulla
-      ex, lacinia nec eleifend vitae, tempor in velit.
+    <div class="title">{{news.title}}</div>
+    <div class="text" [innerHTML]="news.content">
     </div>
   </div>
   <div class="related">
-    <div class="box-news" *ngFor="let item of [1,2,3]">
-      <div class="image"><img src="https://picsum.photos/90/90?random=1"></div>
-      <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur justo quis est
-        convallis, vel rutrum eros laoreet. Integer at suscipit libero, ut convallis purus. Etiam et sem
-        commodo, facilisis neque et, lacinia libero. Nulla aliquam velit tristique, ullamcorper tellus eu,
-        convallis elit. Vestibulum molestie luctus ex, sit amet rutrum odio lacinia id. </div>
+    <div class="box-news" *ngFor="let item of listNews">
+      <div class="title">{{item.title}}</div>
+      <div class="text" [innerHTML]="item.content"></div>
     </div>
   </div>
   <div class="comments">

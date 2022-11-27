@@ -1,10 +1,20 @@
 <div class="container">
-    <form>
+  <div class="title">Nova Publicação</div>
+    <form [formGroup]="newsForm" (submit)="onSubmit()" class="form-group">
         <div class="label-float">
-            <input class="form-control" type="title" id="title" name="title" placeholder="Título">
+            <input class="form-control" type="title" id="title" name="title" placeholder="Título" formControlName="Title">
             <label for="title">Título</label>
         </div>
-        <angular-editor [placeholder]="'Enter text here...'" ></angular-editor>
-        <button type="submit" class="btn green" routerLink="">Publicar</button>
+        <div class="label-float">
+          <select class="form-control" formControlName="CategoryId" name="gender">
+            <option value="" disabled>Selecione</option>
+            <option *ngFor="let item of categories" [value]="item.id">{{item.name}}</option>
+        </select>
+            <label for="subtitle">Categoria</label>
+        </div>
+        <angular-editor [config]="editorConfig" [placeholder]="'Digite o conteúdo aqui...'" formControlName="Content"></angular-editor>
+        <div class="cnt-buttons">
+          <button type="submit" class="btn green">Publicar</button>
+        </div>
     </form>
 </div>

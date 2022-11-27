@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SharedService } from 'src/app/Services/shared.service';
 
 @Component({
   selector: 'app-news',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  listNews: any;
+
+  constructor(
+    private router: Router,
+    private sharedService: SharedService,
+  ) { }
 
   ngOnInit(): void {
+    this.getAllNews();
   }
 
+  getAllNews() {
+    this.sharedService.GetAllNews().subscribe((data: any) => {
+      this.listNews = data;
+    });
+  }
 }
