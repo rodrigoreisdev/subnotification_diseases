@@ -7,18 +7,17 @@
                 <th>Documento</th>
                 <th>Data de Nascimento</th>
                 <th>Cidade</th>
-                <th>Observação</th>
                 <th>Informações</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-register>
             <tr>
                 <td>{{register.name}}</td>
-                <td>{{register.document}}</td>
-                <td>{{register.date}}</td>
-                <td>{{register.city}}</td>
-                <td>{{register.obs}}</td>
-                <td></td>
+                <td>{{register.cpf | mask: '000.000.000-00'}}</td>
+                <td>{{register.birthDate | date: 'dd/MM/yyyy'}}</td>
+                <td>{{register.city}} - {{register.state}}</td>
+                <td>{{register.phone | mask: '(00) 0 0000-0000'}} <br>
+                {{register.email}}</td>
             </tr>
         </ng-template>
     </p-table>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/Services/shared.service';
 
 @Component({
   selector: 'app-registers-adm',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistersAdmComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private sharedService: SharedService
+  ) { }
 
   public registers: any;
 
@@ -16,64 +19,10 @@ export class RegistersAdmComponent implements OnInit {
   }
 
   getRegisters(): any {
-    this.registers = [
-      {
-        id: 1,
-        name: 'Adm',
-        document: '1234567891',
-        date: '20/02/2000',
-        city: 'Alfenas',
-        obs: 'nada a declararar'
-      },
-      {
-        id: 2,
-        name: 'Adm',
-        document: '1234567891',
-        date: '20/02/2000',
-        city: 'Alfenas',
-        obs: 'nada a declararar'
-      },
-      {
-        id: 3,
-        name: 'Adm',
-        document: '1234567891',
-        date: '20/02/2000',
-        city: 'Alfenas',
-        obs: 'nada a declararar'
-      },
-      {
-        id: 4,
-        name: 'Adm',
-        document: '1234567891',
-        date: '20/02/2000',
-        city: 'Alfenas',
-        obs: 'nada a declararar'
-      },
-      {
-        id: 5,
-        name: 'Adm',
-        document: '1234567891',
-        date: '20/02/2000',
-        city: 'Alfenas',
-        obs: 'nada a declararar'
-      },
-      {
-        id: 6,
-        name: 'Adm',
-        document: '1234567891',
-        date: '20/02/2000',
-        city: 'Alfenas',
-        obs: 'nada a declararar'
-      },
-      {
-        id: 7,
-        name: 'Adm',
-        document: '1234567891',
-        date: '20/02/2000',
-        city: 'Alfenas',
-        obs: 'nada a declararar'
-      },
-    ]
+    this.sharedService.GetAllUsers().subscribe(
+      (res: any) => {
+        this.registers = res;
+      });
 
   }
 

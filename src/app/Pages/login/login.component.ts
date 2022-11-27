@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { CookiesService } from 'src/app/Services/cookies.service';
 import { SharedService } from 'src/app/Services/shared.service';
 
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private sharedService: SharedService,
     private cookieService: CookiesService,
-    private route: Router
+    private route: Router,
+    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +33,9 @@ export class LoginComponent implements OnInit {
         (res: any) => {
           this.cookieService.setCookie('authentication', res.token);
           this.route.navigate(['/painel']);
+        },
+        (err: any) => {
+          this.messageService.add({ severity: 'error', summary: 'Erro', detail: err.erro.message });
         });
     }
   }
