@@ -8,6 +8,7 @@ import { NewsAdmComponent } from './components/Dashboard/Admin/news-adm/news-adm
 import { RegistersAdmComponent } from './components/Dashboard/Admin/registers-adm/registers-adm.component';
 import { DefaultUserComponent } from './components/Dashboard/User/default-user/default-user.component';
 import { HomeUserComponent } from './components/Dashboard/User/home-user/home-user.component';
+import { PersonalDataUserComponent } from './components/Dashboard/User/personal-data-user/personal-data-user.component';
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
 import { LoginAdmComponent } from './Pages/login-adm/login-adm.component';
 import { LoginComponent } from './Pages/login/login.component';
@@ -77,6 +78,10 @@ const routes: Routes = [
       {
         path: '',
         component: HomeUserComponent
+      },
+      {
+        path: 'dados',
+        component: PersonalDataUserComponent
       }
     ]
   },

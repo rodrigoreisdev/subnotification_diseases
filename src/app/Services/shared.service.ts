@@ -27,6 +27,16 @@ export class SharedService {
     return this.http.get(this.urlAPI + '/User', { headers });
   }
 
+  public GetUserById(id: string) {
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.get(this.urlAPI + '/User/' + id, { headers });
+  }
+
+  public UpdateUser(data: any) {
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.put(this.urlAPI + '/User', data, { headers });
+  }
+
   //ADMIN
   public LoginAdm(data:any) {
     const headers = new HttpHeaders().set("Content-Type", "application/json");
