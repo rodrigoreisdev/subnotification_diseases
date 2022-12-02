@@ -40,12 +40,16 @@ export class NewsDetailComponent implements OnInit {
       (data: any) => {
         this.news = data;
         this.getNewsByCategory();
+        console.log(this.news);
       });
   }
 
   getNewsByCategory() {
     this.sharedService.GetNewsByCategory(this.news.categoryId).subscribe((data: any) => {
       this.listNews = data;
+      this.listNews.map((item: any) => {
+        item.content = item.content.replace(/<[^>]*>/g, '').substring(0, 200).concat('...');
+      });
     });
   }
 

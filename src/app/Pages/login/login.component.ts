@@ -25,6 +25,13 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.verifyLogged();
+  }
+
+  verifyLogged() {
+    if (this.cookieService.getCookie('authentication')) {
+      this.route.navigate(['/painel']);
+    }
   }
 
   onLogin() {

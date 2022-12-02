@@ -23,6 +23,9 @@ export class NewsComponent implements OnInit {
   getAllNews() {
     this.sharedService.GetAllNews().subscribe((data: any) => {
       this.listNews = data;
+      this.listNews.map((item: any) => {
+        item.content = item.content.replace(/<[^>]*>/g, '').substring(0, 250).concat('...');
+      });
     });
   }
 }
