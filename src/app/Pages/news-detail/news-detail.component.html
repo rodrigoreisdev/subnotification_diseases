@@ -1,31 +1,48 @@
 <app-navbar-home></app-navbar-home>
 <div class="container">
   <div class="post">
-    <div class="title">{{news.title}}</div>
-    <div class="text" [innerHTML]="news.content">
+    <div class="title">{{news?.title}}</div>
+    <div class="text-news" [innerHTML]="news?.content">
     </div>
   </div>
   <div class="related">
-    <div class="box-news" *ngFor="let item of listNews">
-      <div class="title">{{item.title}}</div>
-      <div class="text" [innerHTML]="item.content"></div>
+    <div class="title">Relacionados</div>
+    <div class="box-related">
+      <div class="box-news" *ngFor="let item of listNews" [routerLink]="'/noticias/' + item.id">
+        <div class="title">{{item?.title}}</div>
+        <div class="text" [innerHTML]="item?.content"></div>
+      </div>
     </div>
   </div>
   <div class="comments">
     <div class="title">Comentários</div>
-    <div class="box-comment" *ngFor="let item of [1,2,3]">
-      <div class="name">Lorem Ipsum</div>
-      <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur justo quis est
-        convallis, vel rutrum eros laoreet. Integer at suscipit libero, ut convallis purus. Etiam et sem
-        commodo, facilisis neque et, lacinia libero. Nulla aliquam velit tristique, ullamcorper tellus eu,
-        convallis elit. Vestibulum molestie luctus ex, sit amet rutrum odio lacinia id. </div>
+    <div class="box-comment" *ngFor="let item of listComments">
+      <div class="name">{{item?.createdBy}}</div>
+      <div class="text">{{item?.content}}</div>
     </div>
   </div>
-  <form class="comments-add" [formGroup]="formMessage" (ngSubmit)="sendMessage()">
+  <form class="comments-add" [formGroup]="formMessage" (ngSubmit)="sendMessage()" *ngIf="isLogged">
+    <h2 class="name">Olá, {{user?.unique_name}}</h2>
     <h2 class="subtitle">Digite sua mensagem</h2>
     <textarea rows="5" formControlName="message" cols="30"></textarea>
     <div class="cnt-button">
       <button class="btn green" type="submit">Enviar</button>
     </div>
   </form>
+
+
+  <div class="comments-add" *ngIf="!isLogged">
+    <div class="title">Faça login para comentar</div>
+    <form [formGroup]="loginForm" (submit)="onLogin()">
+        <div class="label-float">
+            <input class="form-control" formControlName="Email" type="email" id="email" name="email" placeholder="Email" (keyup.enter)="onLogin()">
+            <label for="email">Email</label>
+        </div>
+        <div class="label-float">
+            <input type="password" formControlName="Password" class="form-control" id="password" placeholder="Senha" (keyup.enter)="onLogin()">
+            <label for="password">Senha</label>
+        </div>
+        <button type="submit" class="btn green">Entrar</button>
+    </form>
+  </div>
 </div>

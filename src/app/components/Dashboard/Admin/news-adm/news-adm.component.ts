@@ -21,6 +21,17 @@ export class NewsAdmComponent implements OnInit {
     this.sharedService.GetAllNews().subscribe(
       (data: any) => {
         this.news = data;
+        this.news.map((item: any) => {
+          item.content = item.content.replace(/<[^>]*>/g, '').substring(0, 250).concat('...');
+          item.createdAt = item.createdAt.split('T')[0].split('-').reverse().join('/');
+        });
+      });
+  }
+
+  deleteNews(id: string): any {
+    this.sharedService.DeleteNews(id).subscribe(
+      (data: any) => {
+        this.getNews();
       });
   }
 }

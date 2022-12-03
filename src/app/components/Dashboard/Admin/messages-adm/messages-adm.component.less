@@ -1,4 +1,33 @@
 @import '../../../../../styles.less';
+
 .container {
-    min-height: calc(100vh - 12.9rem);
+  min-height: calc(100vh - 12.9rem);
+
+  .link {
+    color: @primary;
+    text-decoration: none;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+
+    i {
+      font-size: 2rem;
+
+      &.aproved {
+        color: #0b833d;
+        cursor: pointer;
+      }
+
+      &.reproved {
+        color: #930f0f;
+        cursor: pointer;
+      }
+
+      &.pending {
+        color: #b8b8b8;
+      }
+    }
+  }
 }

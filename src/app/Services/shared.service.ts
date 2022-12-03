@@ -64,6 +64,32 @@ export class SharedService {
     return this.http.get(this.urlAPI + '/Notice/Category/' + id, { headers });
   }
 
+  public DeleteNews(id: string) {
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.delete(this.urlAPI + '/Notice/' + id, { headers });
+  }
+
+  //COMMENTS
+  public InsertComment(data: any) {
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.post(this.urlAPI + '/Comments', data, { headers });
+  }
+
+  public GetAllCommentsByNews(id: string) {
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.get(this.urlAPI + '/Comments/' + id, { headers });
+  }
+
+  public GetAllComments() {
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.get(this.urlAPI + '/Comments', { headers });
+  }
+
+  public UpdateComment(id: string, status: boolean) {
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.put(this.urlAPI + '/Comments/' + id, status, { headers });
+  }
+
   //CATEGORIES
   public InsertCategory(data: any) {
     const headers = new HttpHeaders().set("Content-Type", "application/json");

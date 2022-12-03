@@ -1,24 +1,32 @@
 <div class="container">
-    <div class="title">Mensagens</div>
-    <p-table [value]="messages" responsiveLayout="scroll" [styleClass]="'table'">
-        <ng-template pTemplate="header">
-            <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Whatsapp</th>
-                <th>Data</th>
-                <th>Mensagem</th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-message>
-            <tr>
-                <td>{{message.name}}</td>
-                <td>{{message.email}}</td>
-                <td>{{message.phone}}</td>
-                <td>{{message.date}}</td>
-                <td>{{message.message}}</td>
-                <td></td>
-            </tr>
-        </ng-template>
-    </p-table>
+  <div class="title">Comentários</div>
+  <p-table [value]="messages" responsiveLayout="scroll" [styleClass]="'table'">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Notícia</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Whatsapp</th>
+        <th>Data</th>
+        <th>Mensagem</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-message>
+      <tr>
+        <td><a class="link" [href]="'/noticias/' + message?.notice.id" target="_blank">{{message?.notice.title}}</a></td>
+        <td>{{message?.createdBy}}</td>
+        <td>{{message?.user.email}}</td>
+        <td>{{message?.user.phone | mask: '(00) 00000-0000'}}</td>
+        <td>{{message?.createdAt | date: 'dd/MM/yyyy'}}</td>
+        <td>{{message?.content}}</td>
+        <td>{{message?.aproved ? 'Aprovado': 'Reprovado'}}</td>
+        <td class="actions">
+          <i class="fa-solid fa-circle-check" [ngClass]="message?.aproved ? 'pending' : 'aproved'" (click)="changeStatus(message.id, true)"></i>
+          <i class="fa-solid fa-circle-xmark" [ngClass]="!message?.aproved ? 'pending' : 'reproved'" (click)="changeStatus(message.id, false)"></i>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>

@@ -30,7 +30,7 @@ export class LoginAdmComponent implements OnInit {
 
   verifyLogged() {
     if (this.cookieService.getCookie('authentication')) {
-      this.route.navigate(['/painel']);
+      this.route.navigate(['/dashboard']);
     }
   }
 

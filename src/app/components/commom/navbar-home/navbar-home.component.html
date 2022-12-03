@@ -3,6 +3,7 @@
         <img src="/assets/navbar/logo_unifenas.png" alt="logo">
     </div>
     <div class="options">
-        <div class="login" [routerLink]="'/login'">Login</div>
+        <div class="login" [routerLink]="'/login'" *ngIf="!isLogged">Login</div>
+        <div class="login" [routerLink]="'/painel'" *ngIf="isLogged">Olá, {{user?.unique_name}}</div>
     </div>
 </div>

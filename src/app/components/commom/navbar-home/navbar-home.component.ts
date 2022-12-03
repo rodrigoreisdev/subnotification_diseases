@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/Services/common.service';
 
 @Component({
   selector: 'app-navbar-home',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private commonService: CommonService,
+  ) { }
+
+  public user: any;
+  public isLogged: boolean = false;
 
   ngOnInit(): void {
+    this.user = this.commonService.getUserData();
+    this.isLogged = this.user != null ? true : false;
   }
 
 }
