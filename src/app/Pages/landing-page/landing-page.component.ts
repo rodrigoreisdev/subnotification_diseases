@@ -20,15 +20,15 @@ export class LandingPageComponent implements OnInit {
   ) { }
 
   public registerForm = new FormGroup({
-    Email: new FormControl('', [Validators.required, Validators.email]),
+    Email: new FormControl('', [Validators.required, CustomValidatorService.isEmail]),
     Password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    Name: new FormControl('', [Validators.required]),
-    Phone: new FormControl('', [Validators.required, Validators.min(10)]),
+    Name: new FormControl('', [Validators.required, CustomValidatorService.isFullName]),
+    Phone: new FormControl('', [Validators.required, CustomValidatorService.isCellPhone]),
     City: new FormControl('', [Validators.required]),
     State: new FormControl('', [Validators.required]),
     Cpf: new FormControl('', [Validators.required, Validators.min(11), CustomValidatorService.isCpf]),
-    BirthDate: new FormControl('', [Validators.required]),
+    BirthDate: new FormControl('', [Validators.required, CustomValidatorService.isValidDate]),
     Gender: new FormControl('', [Validators.required]),
   });
 

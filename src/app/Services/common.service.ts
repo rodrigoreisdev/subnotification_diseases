@@ -16,8 +16,11 @@ export class CommonService {
   ){}
 
   getUserData() {
+    if(this.cookieService.getCookie('authentication') != null){
     const jwt = this.cookieService.getCookie('authentication') || '';
     return jwt_decode(jwt);
+    }
+    return null;
   }
 
 }

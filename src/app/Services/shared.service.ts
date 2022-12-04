@@ -69,6 +69,16 @@ export class SharedService {
     return this.http.delete(this.urlAPI + '/Notice/' + id, { headers });
   }
 
+  public GetAllNewsLimit() {
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.get(this.urlAPI + '/Notice/Limit/', { headers });
+  }
+
+  public GetAllNewsLimitByCategory(id: string) {
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.get(this.urlAPI + '/Notice/Limit/' + id, { headers });
+  }
+
   //COMMENTS
   public InsertComment(data: any) {
     const headers = new HttpHeaders().set("Content-Type", "application/json");
@@ -88,6 +98,16 @@ export class SharedService {
   public UpdateComment(id: string, status: boolean) {
     const headers = new HttpHeaders().set("Content-Type", "application/json");
     return this.http.put(this.urlAPI + '/Comments/' + id, status, { headers });
+  }
+
+  public GetCommentsByUserId(id: string) {
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.get(this.urlAPI + '/Comments/User/' + id, { headers });
+  }
+
+  public GetAllCommentsLimit() {
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this.http.get(this.urlAPI + '/Comments/Limit', { headers });
   }
 
   //CATEGORIES

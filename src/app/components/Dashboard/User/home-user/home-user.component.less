@@ -1,112 +1,160 @@
 @import '../../../../../styles.less';
 
 .container {
-    margin: 2rem auto;
+  margin: 2rem auto;
+  display: flex;
+  gap: 3rem;
+  min-height: 100vh;
+
+  .news,
+  .comments {
+    width: calc(100% /2 - 1rem);
     display: flex;
-    gap: 3rem;
-    .news, .comments{
+    flex-direction: column;
+    background-color: #F6F6F6;
+    border-radius: 20px;
+    padding: 2rem;
+
+    .category {
+      margin: 2rem 0;
+
+      select {
+        height: 3rem;
+        border-radius: 10px;
+      }
+    }
+
+    .title {}
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .box-news {
+        border: @primary 1px solid;
+        border-radius: 10px;
         display: flex;
         flex-direction: column;
-        background-color: #F6F6F6;
-        border-radius: 20px;
-        padding: 2rem;
-        .title {
+        padding: 1rem;
+        min-height: 100px;
+        cursor: pointer;
 
+        &:hover {
+          background-color: #00923f11;
         }
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            .box-news {
-                width: 100%;
-                border: @primary 1px solid;
-                border-radius: 10px;
-                display: flex;
-                padding: 1rem;
-                cursor: pointer;
-                background-color: white;
-                @media screen and (max-width: 550px) {
-                    width: 100%;
-                }
-                &:hover {
-                    background-color: #00923f11;
-                }
-                .image {
-                    width: 90px;
-                    height: 90px;
-                    background-size: cover;
-                    background-position: center;
-                    border-radius: 6px;
-                    background-repeat: no-repeat;
-                    margin-right: 1rem;
-                    img {
-                        border-radius: 6px;
-                    }
-                }
-                .box-text {
-                    display: flex;
-                    align-self: center;
-                    height: 42px;
-                    .text {
-                        text-align: justify;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 3;
-                        -webkit-box-orient: vertical;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                    }
-                }
-            }
+
+        .title {
+          margin: 5px;
+          font-size: 1.4em;
         }
-    }
-    .messages{
+
+        .image {
+          width: 90px;
+          height: 90px;
+          background-size: cover;
+          background-position: center;
+          border-radius: 6px;
+          background-repeat: no-repeat;
+          margin-right: 1rem;
+
+          img {
+            border-radius: 6px;
+          }
+        }
+
+        .text {
+          text-align: justify;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .box-comment {
         display: flex;
         flex-direction: column;
-        background-color: #F6F6F6;
-        border-radius: 20px;
-        padding: 2rem;
-        .title {
+        border: @primary 1px solid;
+        border-radius: 10px;
+        display: flex;
+        padding: 1rem;
+        cursor: pointer;
 
+        .name {
+          font-weight: bold;
         }
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            .box-news {
-                width: 100%;
-                border: @primary 1px solid;
-                border-radius: 10px;
-                display: flex;
-                padding: 1rem;
-                cursor: pointer;
-                background-color: white;
-                @media screen and (max-width: 550px) {
-                    width: 100%;
-                }
-                &:hover {
-                    background-color: #00923f11;
-                }
-                .image {
-                    width: 90px;
-                    height: 90px;
-                    background-size: cover;
-                    background-position: center;
-                    border-radius: 6px;
-                    background-repeat: no-repeat;
-                    margin-right: 1rem;
-                    img {
-                        border-radius: 6px;
-                    }
-                }
-                .text {
-                    text-align: justify;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 3;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-            }
+
+        .date {
+          margin-top: 0.3rem;
+          font-size: 0.8rem;
         }
+
+        .text {
+          margin-top: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+      }
     }
+  }
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    background-color: #F6F6F6;
+    border-radius: 20px;
+    padding: 2rem;
+
+    .title {}
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .box-news {
+        width: 100%;
+        border: @primary 1px solid;
+        border-radius: 10px;
+        display: flex;
+        padding: 1rem;
+        cursor: pointer;
+        background-color: white;
+
+        @media screen and (max-width: 550px) {
+          width: 100%;
+        }
+
+        &:hover {
+          background-color: #00923f11;
+        }
+
+        .image {
+          width: 90px;
+          height: 90px;
+          background-size: cover;
+          background-position: center;
+          border-radius: 6px;
+          background-repeat: no-repeat;
+          margin-right: 1rem;
+
+          img {
+            border-radius: 6px;
+          }
+        }
+
+        .text {
+          text-align: justify;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
 }
