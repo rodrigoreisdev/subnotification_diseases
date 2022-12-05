@@ -1,1 +1,29 @@
-<p>contact works!</p>
+<div class="container">
+  <form [formGroup]="messageForm" class="message" (submit)="onSubmit()">
+    <div class="title">Envia sua mensagem via WhatsApp</div>
+    <div class="label-float">
+      <textarea class="form-control" type="text" id="message" name="message"
+        placeholder="Digite sua mensagem" formControlName="message"></textarea>
+      <label for="email">Digite sua mensagem...</label>
+    </div>
+    <div class="button">
+      <button type="submit" class="btn green">Enviar</button>
+    </div>
+  </form>
+
+  <div class="box-contact">
+    <div class="title">Contato</div>
+    <div class="item">
+      <div class="icon">
+        <i class="fas fa-phone"></i>
+      </div>
+      <a class="link" href="tel:+5511999999999">+55 11 99999-9999</a>
+    </div>
+    <div class="item">
+      <div class="icon">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <a class="link" href="mailto:contato@unifenas.br">contato@unifenas.br</a>
+    </div>
+  </div>
+</div>

@@ -52,6 +52,9 @@ export class HomeUserComponent implements OnInit {
       this.sharedService.GetAllNewsLimitByCategory(this.category).subscribe(
         (res: any) => {
           this.listNews = res;
+          this.listNews.map((item: any) => {
+            item.content = item.content.replace(/<[^>]*>/g, '').substring(0, 250).concat('...');
+          });
         });
     } else {
       this.getNews();

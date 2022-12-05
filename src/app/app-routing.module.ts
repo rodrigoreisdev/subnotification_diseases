@@ -6,6 +6,7 @@ import { HomeAdmComponent } from './components/Dashboard/Admin/home-adm/home-adm
 import { MessagesAdmComponent } from './components/Dashboard/Admin/messages-adm/messages-adm.component';
 import { NewsAdmComponent } from './components/Dashboard/Admin/news-adm/news-adm.component';
 import { RegistersAdmComponent } from './components/Dashboard/Admin/registers-adm/registers-adm.component';
+import { ContactComponent } from './components/Dashboard/User/contact/contact.component';
 import { DefaultUserComponent } from './components/Dashboard/User/default-user/default-user.component';
 import { HomeUserComponent } from './components/Dashboard/User/home-user/home-user.component';
 import { PersonalDataUserComponent } from './components/Dashboard/User/personal-data-user/personal-data-user.component';
@@ -82,6 +83,10 @@ const routes: Routes = [
       {
         path: 'dados',
         component: PersonalDataUserComponent
+      },
+      {
+        path: 'contato',
+        component: ContactComponent
       }
     ]
   },
