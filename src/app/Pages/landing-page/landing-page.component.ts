@@ -34,21 +34,17 @@ export class LandingPageComponent implements OnInit {
 
   public carouselItems: any[] = [
     {
-      img: 'https://picsum.photos/1120/340?random=1',
+      img: 'https://sus.ce.gov.br/wp-content/uploads/2022/01/thumb_susce.jpg',
       link: '/noticias',
     },
     {
-      img: 'https://picsum.photos/1120/340?random=2',
+      img: 'https://mv.com.br/storage/blog/1532522022081162f54b5448008.png',
       link: '/noticias',
     },
     {
-      img: 'https://picsum.photos/1120/340?random=3',
+      img: 'https://www.saudeemdia.com.br/wp-content/uploads/2022/07/img-face.png',
       link: '/noticias',
-    },
-    {
-      img: 'https://picsum.photos/1120/340?random=4',
-      link: '/noticias',
-    },
+    }
   ];
   public states: any[] = [
     {

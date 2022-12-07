@@ -25,25 +25,30 @@
             .title {
               margin: 5px;
             }
-            .image {
-                width: 90px;
-                height: 90px;
-                background-size: cover;
-                background-position: center;
-                border-radius: 6px;
-                background-repeat: no-repeat;
-                margin-right: 1rem;
-                img {
-                    border-radius: 6px;
-                }
-            }
-            .text {
-                text-align: justify;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                text-overflow: ellipsis;
+            .box-text {
+              display: flex;
+              .image {
+                  width: 90px;
+                  height: 90px;
+                  background-size: cover;
+                  background-position: center;
+                  border-radius: 6px;
+                  background-repeat: no-repeat;
+                  margin-right: 1rem;
+                  >img {
+                      border-radius: 6px;
+                      width: 100% !important;
+                  }
+              }
+              .text {
+                  text-align: justify;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 3;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  width: 100%;
+              }
             }
         }
     }

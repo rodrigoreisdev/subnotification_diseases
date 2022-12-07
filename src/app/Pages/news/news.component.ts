@@ -24,7 +24,11 @@ export class NewsComponent implements OnInit {
     this.sharedService.GetAllNews().subscribe((data: any) => {
       this.listNews = data;
       this.listNews.map((item: any) => {
+        if(item.content.match(/<img[^>]+src="?([^"\s]+)"?[^>]*>/g)) {
+          item.image = item.content.match(/<img[^>]+src="?([^"\s]+)"?[^>]*>/g)[0].toString().replace(/<img[^>]+src="?([^"\s]+)"?[^>]*>/g, '$1');
+        }
         item.content = item.content.replace(/<[^>]*>/g, '').substring(0, 250).concat('...');
+        item.title = item.title.substring(0, 25).concat('...');
       });
     });
   }

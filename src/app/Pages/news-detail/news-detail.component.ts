@@ -113,17 +113,17 @@ export class NewsDetailComponent implements OnInit {
       CreatedBy: this.user.unique_name,
       Aproved: false
     };
-    if(data.find((item: any) => item.match === true)) {
+    if (data.find((item: any) => item.match === true)) {
       comment.Aproved = false;
-      this.messageService.add({severity:'warn', summary: 'Atenção', detail: 'Seu comentário foi enviado para avaliação dos moderadores.'});
+      this.messageService.add({ severity: 'warn', summary: 'Atenção', detail: 'Seu comentário foi enviado para avaliação dos moderadores.' });
     } else {
       comment.Aproved = true;
-      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Comentário enviado com sucesso.'});
+      this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Comentário enviado com sucesso.' });
     }
     this.sharedService.InsertComment(comment).subscribe(
       (res: any) => {
-      this.formMessage.get('message')?.setValue('');
-      this.getAllComments(this.news.id);
+        this.formMessage.get('message')?.setValue('');
+        this.getAllComments(this.news.id);
       });
   }
 
@@ -132,6 +132,8 @@ export class NewsDetailComponent implements OnInit {
       this.sharedService.Login(this.loginForm.value).subscribe(
         (res: any) => {
           this.cookieService.setCookie('authentication', res.token);
+          this.user = this.commonService.getUserData();
+
           this.isLogged = true;
         },
         (err: any) => {

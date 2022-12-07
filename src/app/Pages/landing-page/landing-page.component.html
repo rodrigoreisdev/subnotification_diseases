@@ -4,7 +4,7 @@
         <div class="carrousel">
             <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="carouselItems">
                 <ngu-tile *nguCarouselDef="let item; let i = index">
-                    <a [href]="item.link" *ngIf="item.link">
+                    <a href="/noticias" *ngIf="item.link">
                         <img [src]="item.img" alt="">
                     </a>
                     <span *ngIf="!item.link">
@@ -21,22 +21,22 @@
         </div>
         <div class="faq">
             <p-accordion [multiple]="true" [expandIcon]="'pi pi-plus'" [collapseIcon]="'pi pi-minus'">
-                <p-accordionTab header="Header 1">
+                <p-accordionTab header="Dicas de Saúde">
                     Content 1
                 </p-accordionTab>
-                <p-accordionTab header="Header 2">
+                <p-accordionTab header="Alimentação Saudável">
                     Content 2
                 </p-accordionTab>
-                <p-accordionTab header="Header 3">
+                <p-accordionTab header="Saúde Mental">
                     Content 3
                 </p-accordionTab>
-                <p-accordionTab header="Header 4">
+                <p-accordionTab header="Bem-estar">
                     Content 4
                 </p-accordionTab>
             </p-accordion>
         </div>
         <div class="register">
-            <div class="title">Formulário Obrigatório</div>
+            <div class="title">Faça seu Cadastro</div>
             <form [formGroup]="registerForm" (submit)="onRegister()">
                 <div class="label-float">
                     <input class="form-control" formControlName="Name" type="text" id="name" name="name" placeholder="Nome">
