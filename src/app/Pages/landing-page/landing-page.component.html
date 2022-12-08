@@ -4,7 +4,7 @@
         <div class="carrousel">
             <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="carouselItems">
                 <ngu-tile *nguCarouselDef="let item; let i = index">
-                    <a href="/noticias" *ngIf="item.link">
+                    <a href="/noticias/" *ngIf="item.link">
                         <img [src]="item.img" alt="">
                     </a>
                     <span *ngIf="!item.link">
